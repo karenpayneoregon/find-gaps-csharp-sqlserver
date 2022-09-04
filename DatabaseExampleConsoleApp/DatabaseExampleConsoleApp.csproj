@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<ApplicationIcon>assets\csharp.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="readme.md" />
+	  <None Remove="Script1.sql" />
+	  <None Remove="Script2.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="assets\csharp.ico" />
+	  <Content Include="readme.md" />
+	  <Content Include="Script1.sql" />
+	  <Content Include="Script2.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Spectre.Console" Version="0.44.0" />
+	</ItemGroup>
+
+</Project>

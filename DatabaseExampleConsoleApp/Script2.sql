@@ -1,0 +1,18 @@
+﻿DECLARE @BrokenTable TABLE (ID INT);
+
+INSERT INTO @BrokenTable VALUES (1);
+INSERT INTO @BrokenTable VALUES (3);
+INSERT INTO @BrokenTable VALUES (5);
+INSERT INTO @BrokenTable VALUES (7);
+INSERT INTO @BrokenTable VALUES (9);
+WITH CTE
+AS (SELECT 1 AS Number
+    UNION ALL
+    SELECT Number + 1
+    FROM CTE
+    WHERE Number <= 100)
+SELECT TOP (5) *
+FROM CTE
+WHERE Number NOT IN (SELECT ID FROM @BrokenTable)
+ORDER BY Number
+OPTION (MAXRECURSION 0);
