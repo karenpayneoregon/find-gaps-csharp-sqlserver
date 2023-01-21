@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            var result = Double(1, 12.5, 1);
+            IEnumerable<double> result = Double(1, 12.5, 1);
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+
         }
 
         public static IEnumerable<double> Double(double from, double to, double step)

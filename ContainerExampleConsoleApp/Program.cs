@@ -12,12 +12,12 @@ namespace ContainerExampleConsoleApp
 
 
             var sequence1 = BasicFindMissingIntInMockedArray();
-            Console.WriteLine();
+            //Console.WriteLine();
             OutOfOrderExample(sequence1);
-            Console.WriteLine();
-            WithInterfaceExample();
-            Console.WriteLine();
-            ReadFromFileExample();
+            //Console.WriteLine();
+            //WithInterfaceExample();
+            //Console.WriteLine();
+            //ReadFromFileExample();
 
             Continue();
         }
@@ -67,6 +67,9 @@ namespace ContainerExampleConsoleApp
                 var values = sequence2.MissingWrong();
                 AnsiConsole.MarkupLine($"[white on blue]Are there any?[/] {values.Any().ToYesNoString()}");
                 AnsiConsole.MarkupLine(values.JoinWithLastSeparator().Colorize());
+                AnsiConsole.MarkupLine("[white on red]But wait, there are missing elements[/]");
+                var correct = sequence2.Missing();
+                AnsiConsole.MarkupLine(correct.JoinWithLastSeparator().Colorize());
             }
             else
             {
